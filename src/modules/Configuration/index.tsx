@@ -1,8 +1,4 @@
-import { FC, useContext } from 'react';
-import GlobalContext from '@contexts/global';
 import ConfigIcon from '@components/ConfigIcon';
-import { GlobalConfig, ReactSetState } from '@interfaces';
-import { Collapse, Input, Select, Slider, Switch, Tooltip } from 'antd';
 import {
   defaultConversation,
   globalConfigLocalKey,
@@ -12,7 +8,11 @@ import {
   supportedLanguages,
   supportedModels,
 } from '@configs';
+import GlobalContext from '@contexts/global';
+import { GlobalConfig, ReactSetState } from '@interfaces';
 import { setClassByLayout } from '@utils';
+import { Collapse, Input, Select, Slider, Switch, Tooltip } from 'antd';
+import { FC, useContext } from 'react';
 
 const { Panel } = Collapse;
 
@@ -188,6 +188,98 @@ const Configuration: FC<ConfigurationProps> = ({
           </div>
         </Panel>
         <Panel header={i18n.chat_mode_image} key="3">
+          <div className="flex items-center justify-between mb-6">
+            <div>{i18n.config_model}</div>
+            <Select
+              className="w-1/2"
+              value={configs.imageModel}
+              options={supportedImageModels.map((model) => ({
+                label: model,
+                value: model,
+                disabled: model === 'Replicate' && inVercel,
+              }))}
+              onChange={(imageModel) =>
+                updateConfigsAndStorages({ imageModel })
+              }
+            />
+          </div>
+          {configs.imageModel === 'DALL-E' ||
+          configs.imageModel === 'Replicate' ? (
+            <div className="flex items-center justify-between mb-6">
+              <div>{i18n.config_images_size}</div>
+              <Select
+                className="w-1/2"
+                value={configs.imageSize}
+                options={supportedImgSizes.map((size) => ({
+                  label: size,
+                  value: size,
+                }))}
+                onChange={(imageSize) =>
+                  updateConfigsAndStorages({ imageSize })
+                }
+              />
+            </div>
+          ) : null}
+          {configs.imageModel === 'DALL-E' ? (
+            <div>
+              <div className="mb-2">{i18n.config_images_count}</div>
+              <Slider
+                className="w-full"
+                min={1}
+                max={10}
+                step={1}
+                defaultValue={1}
+                value={configs.imagesCount}
+                onChange={(imagesCount) =>
+                  updateConfigsAndStorages({ imagesCount })
+                }
+              />
+            </div>
+          ) : null}
+          {configs.imageModel === 'Midjourney' ? (
+            <>
+              <div className="mb-6">
+                <div className="mb-2">Discord Server Id:</div>
+                <Input
+                  className="w-full"
+                  autoComplete="off"
+                  value={configs.discordServerId}
+                  onChange={(e) =>
+                    updateConfigsAndStorages({
+                      discordServerId: e.target.value,
+                    })
+                  }
+                />
+              </div>
+              <div className="mb-6">
+                <div className="mb-2">Discord Channel Id:</div>
+                <Input
+                  className="w-full"
+                  autoComplete="off"
+                  value={configs.discordChannelId}
+                  onChange={(e) =>
+                    updateConfigsAndStorages({
+                      discordChannelId: e.target.value,
+                    })
+                  }
+                />
+              </div>
+              <div className="mb-6">
+                <div className="mb-2">Discord Token:</div>
+                <Input
+                  className="w-full"
+                  type="password"
+                  autoComplete="off"
+                  value={configs.discordToken}
+                  onChange={(e) =>
+                    updateConfigsAndStorages({ discordToken: e.target.value })
+                  }
+                />
+              </div>
+            </>
+          ) : null}
+        </Panel>
+        <Panel header={i18n.chat_mode_video} key="4">
           <div className="flex items-center justify-between mb-6">
             <div>{i18n.config_model}</div>
             <Select
