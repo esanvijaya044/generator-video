@@ -1,21 +1,9 @@
-![](assets/preview.png)
-
-<h2 align="center">ChatGPT-Vercel</h2>
-
-<p align="center">
-  <a href="https://github.com/GPTGenius/chatgpt-vercel/tags">
-    <img alt="GitHub tag (latest by date)" src="https://img.shields.io/github/v/release/GPTGenius/chatgpt-vercel">
-  </a>
-  <img alt="node-current (scoped)" src="https://img.shields.io/node/v/replicate-fetch">
-  <a href="https://github.com/GPTGenius/chatgpt-vercel/blob/main/LICENSE">
-    <img alt="license" src="https://img.shields.io/github/license/GPTGenius/chatgpt-vercel">
-  </a>
-</p>
+<h2 align="center">Generator video</h2>
 
 English | [简体中文](./README.zh-CN.md)
 
 ## Introduction
-Create a private ChatGPT website with one-click for free using Vercel, support muti **text** / **images generation** conversations. Powered by OpenAI API GPT-4/3.5 and Vercel.
+Create a private Generator video website with one-click for free using Vercel, support muti **text** / **images generation** conversations. Powered by OpenAI API GPT-4/3.5 and Vercel.
 
 ## Features
 - ⚡ Deploy quickly and for free using Vercel
@@ -26,8 +14,8 @@ Create a private ChatGPT website with one-click for free using Vercel, support m
 - 💭 Local chat history saved with search, import and export functionality
 
 ## Live Demo
-- [chatgpt-vercel-sample](https://chatgpt-vercel-sample.vercel.app/)
-- [chatgpt-vercel-zh-sample](https://chatgpt-vercel-zh-sample.vercel.app/)
+- [Generator video-vercel-sample](https://Generator video-vercel-sample.vercel.app/)
+- [Generator video-vercel-zh-sample](https://Generator video-vercel-zh-sample.vercel.app/)
 
 ## User Guide
 You can access the online demo above or deploy it privately for experience.
@@ -62,7 +50,7 @@ see [Configurations](#Configurations)
 ### 1. Create Project
 Create Vercel project from a github forked project(recommand) or the following **Deploy** button.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/GPTGenius/chatgpt-vercel&env=OPENAI_API_KEY)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/GPTGenius/Generator video-vercel&env=OPENAI_API_KEY)
 
 ### 2. Set OPENAI_API_KEY
 There are three ways to set your OpenAI API Key:
@@ -159,12 +147,12 @@ Any contributions are highly appreciated. Here are some tips:
 - For new feature support, please open an issue directly.
 
 ## Credits
-- English prompts are modified from [awesome-chatgpt-prompts](https://github.com/f/awesome-chatgpt-prompts)
-- Chinese prompts are modified from [awesome-chatgpt-prompts-zh](https://github.com/PlexPt/awesome-chatgpt-prompts-zh)
+- English prompts are modified from [awesome-Generator video-prompts](https://github.com/f/awesome-Generator video-prompts)
+- Chinese prompts are modified from [awesome-Generator video-prompts-zh](https://github.com/PlexPt/awesome-Generator video-prompts-zh)
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=GPTGenius/chatgpt-vercel&type=Date)](https://star-history.com/#GPTGenius/chatgpt-vercel&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=GPTGenius/Generator video-vercel&type=Date)](https://star-history.com/#GPTGenius/Generator video-vercel&Date)
 
 ## License
 Based on [MIT License](./LICENSE)

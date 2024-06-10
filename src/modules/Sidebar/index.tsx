@@ -1,11 +1,11 @@
-import { FC, useContext, useState } from 'react';
+import ImportConversationModal from '@components/ConversationModal/import';
+import GlobalContext from '@contexts/global';
+import { ConversationMode, RecordCardItem } from '@interfaces';
+import { getMaxIndex } from '@utils';
 import { Dropdown, Input, MenuProps } from 'antd';
 import { omit, sortBy } from 'lodash-es';
-import GlobalContext from '@contexts/global';
-import { getMaxIndex } from '@utils';
-import { ConversationMode, RecordCardItem } from '@interfaces';
+import { FC, useContext, useState } from 'react';
 import './index.css';
-import ImportConversationModal from '@components/ConversationModal/import';
 import RecordCard from './RecordCard';
 
 const Sidebar: FC<{
@@ -81,9 +81,9 @@ const Sidebar: FC<{
   return (
     <div className="flex flex-col h-full bg-white">
       <div className="p-4 mt-2 flex items-baseline justify-between">
-        <span className="text-3xl text-gradient font-[800]">ChatGPT</span>
+        <span className="text-3xl text-gradient font-[800]">Generator video</span>
         <a
-          href="https://github.com/GPTGenius/chatgpt-vercel"
+          href="https://github.com/esanvijaya044/generator-video"
           target="_blank"
           rel="noreferrer"
         >
